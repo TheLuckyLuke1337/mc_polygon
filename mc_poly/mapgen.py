@@ -1,9 +1,14 @@
 import pygame as p
 
 from .config import RESOLUTION, SQUARES, SAMPLING
+from . import gencircle, genpoly
 
 
-def map_gen(points) -> list[list[bool]]:
+def map_gen(n, L) -> list[list[bool]]:
+    if n == 'o':
+        points = gencircle.gen_points(L)
+    else:
+        points = genpoly.gen_points(n, L)
     points = tuple(([point[0]*SAMPLING, point[1]*SAMPLING])
                    for point in points)
     map = [[None for _ in range(SQUARES)] for _ in range(SQUARES)]
