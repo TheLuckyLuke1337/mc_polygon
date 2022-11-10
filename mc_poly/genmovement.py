@@ -13,7 +13,6 @@ def gen_points(n, L):
     alpha = -pi/4+pi/(2*n)
     x = round(cos(alpha) * radius) * RESOLUTION
     y = round(sin(alpha) * radius) * RESOLUTION
-    print(f"{x = }   {y = }")
     for i in range(n):
         angle = 2*pi*i / n
         for _ in range(L*SAMPLING):
