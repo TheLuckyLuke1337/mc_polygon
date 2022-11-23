@@ -5,7 +5,7 @@ from mc_poly import run
 if __name__ == '__main__':
     n = argv[1]
     L = argv[2]
-    if n != 'o':
+    if not n in ('o',):
         n = int(n)
-    L = int(L)
+    L = float(L)
     run(n, L)
