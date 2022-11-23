@@ -47,3 +47,10 @@ def generate_circle(d: int or float):
         for j, block in enumerate(row):
             block_map[i][j] = Vector.norm(block) < 0.05+d/2
     return block_map
+
+
+def map_gen(n, L) -> list[list[bool]]:
+    if n in ('o',):
+        return generate_circle(L)
+    else:
+        return generate_polygon(n, L+1)

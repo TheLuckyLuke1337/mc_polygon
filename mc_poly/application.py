@@ -1,8 +1,8 @@
 import pygame as p
 
-from .mapgen import map_gen
+from .quick_gen import map_gen
 
-from .config import RESOLUTION, CONCRETE, BEDROCK, SQUARES, SAMPLING
+from .config import RESOLUTION, CONCRETE, BEDROCK
 
 
 class Application:

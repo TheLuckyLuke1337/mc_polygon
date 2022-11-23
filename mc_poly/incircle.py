@@ -2,7 +2,7 @@ from math import sqrt
 
 from .circumcircle import circumcircle
 
-# distance between mid point and
+# distance between mid point and a linesegment in a circle
 
 
 def incircle(n: int, L: float) -> float:
