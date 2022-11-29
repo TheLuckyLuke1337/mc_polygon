@@ -1,5 +1,6 @@
 from .application import Application
 
-def run(n, L):
+
+def generate_and_display_trace(n, L):
     app = Application(n, L)
     app.run()

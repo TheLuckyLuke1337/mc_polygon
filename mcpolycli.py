@@ -1,6 +1,6 @@
 from sys import argv
 
-from mc_poly import run
+from mc_poly import generate_and_display_trace as run
 
 if __name__ == '__main__':
     n = argv[1]
