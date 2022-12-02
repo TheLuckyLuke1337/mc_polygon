@@ -16,11 +16,12 @@ def get_block_map(mode: int, squares: int):
     return block_map
 
 
-def get_reference_points(n: int, L: int or float):
+def get_reference_points(n: int, L: int or float, rotation: float = 0):
     distance = 2 * incircle(n, L) + 0.05
     reference_points = []
+    rotation_angle = pi * rotation/180
     for i in range(n):
-        angle = 2*pi * (i+n)/n
+        angle = rotation_angle + 2*pi * (i+n)/n
         angle += pi/2
         x = cos(angle) * distance
         y = sin(angle) * distance
@@ -28,9 +29,9 @@ def get_reference_points(n: int, L: int or float):
     return reference_points
 
 
-def generate_polygon(n, L):
+def generate_polygon(n: int, L: int or float, rotation: float = 0):
     block_map = get_block_map(1-L % 2, SQUARES)
-    reference_points = get_reference_points(n, L)
+    reference_points = get_reference_points(n, L, rotation)
     for i, row in enumerate(block_map):
         for j, block in enumerate(row):
             covered = True
@@ -49,8 +50,8 @@ def generate_circle(d: int or float):
     return block_map
 
 
-def map_gen(n, L) -> list[list[bool]]:
+def map_gen(n: int, L: int or float, rotation: float = 0) -> list[list[bool]]:
     if n in ('o',):
         return generate_circle(L)
     else:
-        return generate_polygon(n, L+1)
+        return generate_polygon(n, L+1, rotation)
