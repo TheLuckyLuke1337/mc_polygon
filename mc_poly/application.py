@@ -6,11 +6,11 @@ from .config import RESOLUTION, CONCRETE, BEDROCK
 
 
 class Application:
-    def __init__(self, n, L):
+    def __init__(self, n: int, L: int or float, rotation: float = 0):
         p.init()
         L = L - 1
         self.__load_images()
-        self.__map = map_gen(n, L)
+        self.__map = map_gen(n, L, rotation)
         self.__clock = p.time.Clock()
 
     def __load_images(self):
